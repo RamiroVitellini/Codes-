@@ -119,17 +119,12 @@ class GestorHabitacion:
         for i in self.lista_habitaciones:
             print (f"Habitacion numero {i.numero}, Maximo de personas:{i.max_personas}, Precio: {i.precio}")
 
-    def imprimir_habitacion(self,cantidad):
+    def listar_habitaciones(self):
         if self.lista_habitaciones:
-            print("\nLista de habitaciones:")
-        contador = 0
-        for habitacion in self.lista_habitaciones:
-            if contador >= cantidad:
-                break
-            print(f"\nNúmero: {habitacion.numero}")
-            print(f"Tipo: {habitacion.tipo_habitacion}")
-            print(f"Capacidad: {habitacion.max_personas}")
-            contador += 1
-
-gestor = GestorHabitacion()
-gestor.imprimir_habitacion()
+            cont = 0
+            num_a_ver = input("dame el numero de habitaciones a ver: ")
+            for i in self.lista_habitaciones:
+                print(f"Habitacion numero: {i.numero} Maximo de Personas: {i.max_personas} Precio: {i.precio}")
+                cont+=1
+                if cont == num_a_ver:
+                    return
