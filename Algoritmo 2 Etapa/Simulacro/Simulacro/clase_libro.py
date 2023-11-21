@@ -19,24 +19,28 @@ class Libro:
         self.autor = autor
         self.estado = estado_libro
 
+        def alquilar_libro(self):
+                self.estado_libro = "Alquilado"
+
+        def devolver_alquilado(self):
+                self.estado_libro = "No alquilado"
+        
+        def presentarse(self):
+                print (f"El id del libro es {self.id}, nombre: {self.nombre}, autor: {self.autor} estado: {self.estado_libro}")
+
+        def dar_tipo(self):
+                print(f'Soy libro de tipo: {type(self).__name__}')
+
 class LibroNiños(Libro):
-    def __init_(self, id, nombre, estado_libro, edad_minima :11):
-        super().__init_subclass__(id, nombre, estado_libro)
+    def __init_(self, id, nombre, autor, estado_libro, edad_minima :11):
+        super().__init__(id, nombre, autor, estado_libro)
         self.edad_minima = edad_minima
+        def presentarse(self):
+                print (f"El id del libro es {self.id}, nombre: {self.nombre}, autor: {self.autor} estado: {self.estado_libro}, edad minima: {self.edad_minima}")
 
 class LibroIdiomas(Libro):
-    def __init_(self, id, nombre, estado_libro, idioma_libro):
-        super().__init_subclass__(id, nombre, estado_libro)
+    def __init_(self, id, nombre, autor, estado_libro, idioma_libro):
+        super().__init__(id, nombre, autor, estado_libro)
         self.idioma_libro = idioma_libro
-
-    def presentarse(self):
-        print (f"El id del libro es {self.id}, nombre: {self.nombre}, autor: {self.autor} estado: {self.estado_libro}")
-
-    def dar_tipo(self):
-        print(f'Soy libro de tipo: {type(self).__name__}')
-
-    def alquilar_libro(self,alquilado):
-        self.estado_libro = alquilado
-
-    def devolver_alquilado(self,no_alquilado):
-        self.estado_libro = no_alquilado
+            def presentarse(self):
+                print (f"El id del libro es {self.id}, nombre: {self.nombre}, autor: {self.autor} estado: {self.estado_libro}, idima libro: {self.idioma_libro}")
