@@ -8,7 +8,7 @@ class GestorBiblioteca:
             for id_existentes in self.lista_libros:
                 if id_existentes.id == id:
                     print ("Ese id ya existe")
-                return
+                return id
 
     def verificar_estado(self):
             self.estado_libros = self.devolver_alquilado()
