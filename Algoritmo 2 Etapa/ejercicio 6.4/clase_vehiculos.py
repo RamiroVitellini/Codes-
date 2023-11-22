@@ -7,11 +7,12 @@ Crear una clase padre Vehiculos:
     3.  Metodos que luego modificarán las clases hijas. Acelerar, Retroceder, obtener_velocidad, setear_velocidad"""
 class Vehiculos: 
 
-    def __init__(self, patente, marca: str, anio: int, origen: str) :
+    def __init__(self, patente, marca: str, anio: int, origen: str, velocidad) :
         self.patente = patente
         self.marca = marca
         self.anio = anio
         self.origen = origen
+        self.velocidad = velocidad
 
     def presentar_pelicula(self):
         print(f"""La patente del auto es {self.patente}, de marca {self.marca}, año {self.anio} y su origen es de {self.origen}""")
@@ -20,16 +21,16 @@ class Vehiculos:
         print (f'Soy un vehiculo de tipo: {type(self).__name__}')
 
     def acelerar(self):
-        pass
+        print ("Esta acelerando")
     
     def retroceder(self):
-        pass
+        print ("Esta retrocediendo")
     
     def obtener_velocidad(self):
-        pass
+        print ("La velocidad es: ")
     
     def setear_velocidad(self):
-        pass
+        print ("La nueva velocidad es: ")
 
     def cambiar_velocidad(self,nueva_velocidad):
         self.velocidad = nueva_velocidad
@@ -41,16 +42,16 @@ class Vehiculos:
 3.   Deportivo"""
 
 class Particular(Vehiculos):
-    def __init__(self, patente, marca: str, anio: int, origen: str, tiempo_uso):
-        super().__init__(patente, marca, anio, origen)
+    def __init__(self, patente, marca: str, anio: int, origen: str, velocidad, tiempo_uso):
+        super().__init__(patente, marca, anio, origen, velocidad)
         self.tiempo_uso = tiempo_uso
 
 class PickUp(Vehiculos):
-    def __init__(self, patente, marca: str, anio: int, origen: str, capacidad_de_carga):
-        super().__init__(patente, marca, anio, origen)
+    def __init__(self, patente, marca: str, anio: int, origen: str,velocidad, capacidad_de_carga):
+        super().__init__(patente, marca, anio, origen, velocidad)
         self.capacidad_de_carga = capacidad_de_carga
 
 class Deportivo(Vehiculos): 
-    def __init__(self, patente, marca: str, anio: int, origen: str, caballos_fuerza):
-        super().__init__(patente, marca, anio, origen)
+    def __init__(self, patente, marca: str, anio: int, origen: str,velocidad, caballos_fuerza):
+        super().__init__(patente, marca, anio, origen, velocidad)
         self.caballos_fuerza = caballos_fuerza
