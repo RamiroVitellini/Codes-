@@ -13,34 +13,37 @@ El programa debe:
         4. Devolver_alquiler (Cambiaran el estado del libro a NO ALQUILADO)
 """
 class Libro:
-    def __init__(self,id, nombre, autor, estado_libro):
+    def __init__(self, id:int, nombre:str, autor:str, estado:bool = False):
         self.id = id
         self.nombre = nombre
         self.autor = autor
-        self.estado = estado_libro
+        self.estado = estado
 
-        def alquilar_libro(self):
-                self.estado_libro = "Alquilado"
+    def presentar(self):
+        print (f'ID del libro: {self.id}, Nombre: {self.nombre}, Autor: {self.autor}, Estado: {self.estado} ')
+    
+    def get_tipo(self): 
+        print (f'El tipo del libro es: {self.__name__}')
 
-        def devolver_alquilado(self):
-                self.estado_libro = "No alquilado"
-        
-        def presentarse(self):
-                print (f"El id del libro es {self.id}, nombre: {self.nombre}, autor: {self.autor} estado: {self.estado_libro}")
+    def alquilar(self):
+        self.estado = True 
+    
+    def alquilado(self):
+        self.estado = False 
 
-        def dar_tipo(self):
-                print(f'Soy libro de tipo: {type(self).__name__}')
-
-class LibroNiños(Libro):
-    def __init_(self, id, nombre, autor, estado_libro, edad_minima :11):
-        super().__init__(id, nombre, autor, estado_libro)
-        self.edad_minima = edad_minima
-        def presentarse(self):
-                print (f"El id del libro es {self.id}, nombre: {self.nombre}, autor: {self.autor} estado: {self.estado_libro}, edad minima: {self.edad_minima}")
-
-class LibroIdiomas(Libro):
-    def __init_(self, id, nombre, autor, estado_libro, idioma_libro):
-        super().__init__(id, nombre, autor, estado_libro)
+class LibroNiño (Libro):
+    def __init__(self, id:int, nombre:str, autor:str, estado:bool = bool, edad_min = 11):
+        super().__init__(id, nombre,autor,estado)
+        self.edad_min = edad_min
+    
+    def presentar(self):
+        print(f'Id: {self.id}, Nombre: {self.nombre}, Autor: {self.autor}, Edad minima: {self.edad_min}, Estado: {self.estado}, Edad minima: {self.edad_minima}')
+    
+class IdiomaLibro(Libro):
+    def __init__(self, id:int, nombre:str, autor:str, estado:bool = bool, idioma_libro = str):
+        super().__init__(id, nombre,autor,estado)
         self.idioma_libro = idioma_libro
-            def presentarse(self):
-                print (f"El id del libro es {self.id}, nombre: {self.nombre}, autor: {self.autor} estado: {self.estado_libro}, idima libro: {self.idioma_libro}")
+    
+    def presentar(self):
+        print (f'ID del libro: {self.id}, Nombre: {self.nombre}, Autor: {self.autor}, Estado: {self.estado} ')
+
